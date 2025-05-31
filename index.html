@@ -6,34 +6,65 @@
     <title>catching theif</title>
 </head>
 <style>
+    .body {
+        background-color:brown;
+    }
     .container {
         display:flex;
         justify-content:space-around;
         align-items:center;
         flex-direction:row;
-        margin-top:300px;
+        margin-top:50px;
         
     }
     .dog-img {
-        height:80px;
+        height:130px;
     }
     .theif {
-        height:80px;
+        height:130px;
     }
     .container-1 {
         display:block;
-        margin:20px 550px;
+        margin:40px 530px;
+        
+    }
+    .btn {
+        background-color:black;
+        color:white;
+        border:none;
+        padding:10px;
+        margin-left:10px;
+    }
+    .house-img {
+        height:200px;
+        display:block;
+        margin:70px auto;
     }
 </style>
-<body>
+<body class="body">
+    <img src="mansion.png" class="house-img" />
     <div class="container">
     <img src="pets.png" class="dog-img" id="dog" />
+    
     <img src="theif.png" class="theif" id="theif" />
     </div>
     <div class="container-1">
-    <button>catch the theif</button>
-    <button>stop</button>
+    <button onclick="chase()" class="btn">
+        Catch the Theif</button>
+    <button onclick="stop()" class="btn">Stop</button>
     </div>
-   
+    <script>
+        const element1 = document.getElementById("dog")
+        const element2 = document.getElementById("theif")
+        function chase() {
+           element1.src = "running-dog.png"
+           element2.src = "running-theif.png"
+        }
+        function stop() {
+            element1.src = "pets.png"
+            element2.src = "theif.png"
+        }
+        
+    </script>
 </body>
 </html>
